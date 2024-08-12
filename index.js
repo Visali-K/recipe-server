@@ -51,7 +51,7 @@ app.post("/register", async (req, res) => {
     console.log("🚀 ~ app.post ~ user:", user);
     //  const hashedPassword = await bcrypt.hash(password, 10);
     await user.save();
-    res.json({ success: true });
+    res.json({ success: true, message:"success" });
   } catch (error) {
     console.log("Error during registration:", error);
     res.json({ success: false });
