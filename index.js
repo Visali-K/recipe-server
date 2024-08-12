@@ -6,7 +6,8 @@ import bodyParser from "body-parser";
 
 const port = 5900;
 const app = express();
-
+app.use(cors());
+app.use(express.json());
 // app.use(express.static('public'));
 
 mongoose
@@ -22,8 +23,7 @@ mongoose
 // db.once('open', () => {
 //     console.log("Mongodb connection successful");
 // });
-app.use(cors());
-app.use(bodyParser.json());
+
 
 const userSchema = new mongoose.Schema({
   name: { type: String, required: true },
