@@ -11,7 +11,7 @@ const app = express();
 
 mongoose
   .connect(
-    "mongodb+srv://Visalikannan1711:qwertyuiop12345678@cluster0.h6jnfag.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    "mongodb+srv://Visalikannan1711:qwertyuiop12345678@cluster0.h6jnfag.mongodb.net/webdev"
   )
   .then(() => {
     console.log("mongodb connected");
