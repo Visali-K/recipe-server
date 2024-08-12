@@ -10,7 +10,7 @@ const app = express();
 app.use(cors({
     origin: 'https://recipe-client-three.vercel.app'
 }));
-app.use(express.json());
+app.use(bodyParser.json());
 // app.use(express.static('public'));
 
 mongoose
