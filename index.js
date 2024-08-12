@@ -40,12 +40,15 @@ app.get("/", async (req, res) => {
 });
 app.post("/register", async (req, res) => {
   const { name, age, dob, gender, email, password } = req.body;
+  console.log("🚀 ~ app.post ~ email:", email);
+  console.log("🚀 ~ app.post ~ password:", password);
 
   try {
     const user = new UserModel({ name, age, dob, gender, email, password });
+    console.log("🚀 ~ app.post ~ user:", user);
     //  const hashedPassword = await bcrypt.hash(password, 10);
     await user.save();
-    res.status(200);
+    res.json({ success: true });
   } catch (error) {
     console.log("Error during registration:", error);
     res.json({ success: false });
