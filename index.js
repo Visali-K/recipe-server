@@ -6,11 +6,8 @@ import bodyParser from "body-parser";
 
 const port = 5900;
 const app = express();
-// app.use(cors());
-app.use(cors({
-    origin: 'https://recipe-client-three.vercel.app'
-}));
-app.use(bodyParser.json());
+app.use(cors({origin:"https://recipe-client-three.vercel.app"}));
+app.use(express.json());
 // app.use(express.static('public'));
 
 mongoose
@@ -29,12 +26,12 @@ mongoose
 
 
 const userSchema = new mongoose.Schema({
-  name: { type: String  },
-  age: { type: String  },
-  dob: { type: String },
-  gender: { type: String },
-  email: { type: String },
-  password: { type: String },
+  name: { type: String, required: true },
+  age: { type: String, required: true },
+  dob: { type: String, required: true },
+  gender: { type: String, required: true },
+  email: { type: String, required: true },
+  password: { type: String, required: true },
 });
 
 const UserModel = mongoose.model("users", userSchema);
@@ -51,7 +48,7 @@ app.post("/register", async (req, res) => {
     console.log("🚀 ~ app.post ~ user:", user);
     //  const hashedPassword = await bcrypt.hash(password, 10);
     await user.save();
-    res.json({ success: true, message:"success" });
+    res.json({ success: true });
   } catch (error) {
     console.log("Error during registration:", error);
     res.json({ success: false });
