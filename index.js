@@ -6,7 +6,7 @@ import bodyParser from "body-parser";
 
 const port = 5900;
 const app = express();
-app.use(cors());
+app.use(cors({origin:"https://recipe-client-three.vercel.app/"}));
 app.use(express.json());
 // app.use(express.static('public'));
 
