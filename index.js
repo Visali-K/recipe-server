@@ -29,12 +29,12 @@ mongoose
 
 
 const userSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  age: { type: String, required: true },
-  dob: { type: String, required: true },
-  gender: { type: String, required: true },
-  email: { type: String, required: true },
-  password: { type: String, required: true },
+  name: { type: String  },
+  age: { type: String  },
+  dob: { type: String },
+  gender: { type: String },
+  email: { type: String },
+  password: { type: String },
 });
 
 const UserModel = mongoose.model("users", userSchema);
