@@ -22,7 +22,9 @@ mongoose
 // db.once('open', () => {
 //     console.log("Mongodb connection successful");
 // });
-app.use(cors());
+app.use(cors({
+  origin:"https://recipe-client-7lqx.vercel.app/"
+}));
 app.use(bodyParser.json());
 
 const userSchema = new mongoose.Schema({
